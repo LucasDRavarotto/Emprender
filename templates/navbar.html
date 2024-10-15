@@ -1,8 +1,17 @@
-
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<header>
+  <a class="flex-sm-fill text-sm-center nav-link active" href="#">
+      <img src="{% static 'img/logo.png' %}" style="max-width: 300px; margin: 30px;">
+  </a>
+  
+  <nav class="nav nav-pills flex-column flex-sm-row">
+    <a class="flex-sm-fill text-sm-center nav-link active" href="#">Inicio</a>
+    <a class="flex-sm-fill text-sm-center nav-link" href="#">Categorías</a>
+    <a class="flex-sm-fill text-sm-center nav-link" href="#">Sobre nosotros</a>
+    <a class="flex-sm-fill text-sm-center nav-link" href="#">Contacto</a>
+    <a class="flex-sm-fill text-sm-center nav-link" href="#">Cuenta</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'home' %}">Inicio</a>
+      <a class="navbar-brand" href="{% url 'home' %}">Menú</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -17,6 +26,15 @@
       </div>
     </div>
  </nav>
+
+  {% block contenido %}
+
+  {% endblock %}
+
+</header>
+
+
+
           
 
           
