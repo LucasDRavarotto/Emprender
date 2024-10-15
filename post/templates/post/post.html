@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+
+ 
+
+{% block content %}
+
+<div class="container mt-4">
+    <h1>Posts en la categoría: {{ categoria.name}}</h1>
+    <div class="row">
+        {% for post in posts %}
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    {% if post.imagen_seccion %}
+                        <img src="{{ posts.imagen_seccion.url }}" class="card-img-top" alt="{{ post.titulo }}">
+                
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ posts.titulo }}</h5>
+                        <p class="card-text">{{ posts.descripcion|truncatewords:20 }}</p>
+                        
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <div class="col">
+                <p>No hay posts en esta categoría.</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content%}
+
+<h1> {{post.titulo}}</h1>
