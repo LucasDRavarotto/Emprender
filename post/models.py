@@ -2,7 +2,7 @@ from django.db import models
 import uuid 
 
 # Crea tu modelo Category primero
-class Category(models.Model):
+class Categoria(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
     name = models.CharField(max_length=100)
     descripcion = models.TextField(default='Sin descripción disponible')
