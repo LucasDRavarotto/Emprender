@@ -1,40 +1,18 @@
-<header>
-  <a class="flex-sm-fill text-sm-center nav-link active" href="#">
-      <img src="{% static 'img/logo.png' %}" style="max-width: 300px; margin: 30px;">
-  </a>
-  
-  <nav class="nav nav-pills flex-column flex-sm-row">
-    <a class="flex-sm-fill text-sm-center nav-link active" href="#">Inicio</a>
-    <a class="flex-sm-fill text-sm-center nav-link" href="#">Categorías</a>
-    <a class="flex-sm-fill text-sm-center nav-link" href="#">Sobre nosotros</a>
-    <a class="flex-sm-fill text-sm-center nav-link" href="#">Contacto</a>
-    <a class="flex-sm-fill text-sm-center nav-link" href="#">Cuenta</a>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'home' %}">Menú</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'FormEmp' %}">Agregar emprendimiento</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Inicio</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+          <li class="nav-item active">
+              <!--<a class="nav-link" href="/">Emprendimientos </a>
           </li>
           <li class="nav-item">
-          </li>
-        </ul>
-      </div>
-    </div>
- </nav>
+              <a class="nav-link" href="/">Sobre Nosotros</a>
+          </li> -->
 
-  {% block contenido %}
-
-  {% endblock %}
-
-</header>
-
-
-
-          
-
-          
+          <!-- Agregar enlaces si se necesita -->
+      </ul>
+  </div>
+</nav>

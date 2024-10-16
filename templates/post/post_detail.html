@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.titulo }}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        .post-detail img {
+            max-width: 600px; /* Tamaño máximo para las imágenes */
+            height: auto; /* Ajusta la altura automáticamente */
+        }
+        .post-detail {
+            margin-top: 40px;
+            text-align: center; /* Centrar contenido */
+        }
+        .post-detail h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .post-detail p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}  <!-- Usar el navbar de main.html -->
+
+    <div class="container post-detail">
+        <h1>{{ post.titulo }}</h1>
+        <img src="{{ post.imagen_seccion.url }}" alt="{{ post.titulo }}" class="img-fluid">
+        <p>{{ post.descripcion }}</p>
+        <p><strong>Tipo de emprendimiento:</strong> {{ post.categoria.nombre }}</p>
+        <p><strong>Publicado el:</strong> {{ post.fecha_creacion }}</p>
+    </div>
+
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>
