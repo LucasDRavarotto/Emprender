@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 from django import forms
-from .models import Post , Category
+from .models import Post , Categoria
 
 class PostForm(ModelForm): 
     class Meta: 
@@ -10,5 +10,5 @@ class PostForm(ModelForm):
 
 class CategoryForm(forms.ModelForm):
     class Meta:
-        model = Category
+        model = Categoria
         fields = ['name']
