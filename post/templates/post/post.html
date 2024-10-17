@@ -11,7 +11,7 @@
             <div class="col-md-4">
                 <div class="card mb-4 shadow-sm">
                     {% if post.imagen_seccion %}
-                        <img src="{{ posts.imagen_seccion.url }}" class="card-img-top" alt="{{ post.titulo }}">
+                        <img src="{{ posts.imagen_seccion.url }}" width="100px" height="100px" class="card-img-top" alt="{{ post.titulo }}">
                 
                     {% endif %}
                     <div class="card-body">
@@ -21,6 +21,20 @@
                     </div>
                 </div>
             </div>
+            <div class="post-detail">
+                <h1>{{ post.titulo }}</h1>
+                <p>{{ post.descripcion }}</p>
+                
+                {% if post.imagen_detalle %}
+                <img src="{{ post.imagen_detalle.url }}" alt="Imagen detallada de {{ post.titulo }}" class="img-fluid" style="max-width: 100%; border-radius: 8px;">
+                {% endif %}
+                
+                <!-- Otros detalles del post -->
+                <p>Horario de atención: {{ post.horario_atencion }}</p>
+                <p>Ubicación: {{ post.ubicacion }}</p>
+                <p>Servicios: {{ post.servicios }}</p>
+            </div>
+            
         {% empty %}
             <div class="col">
                 <p>No hay posts en esta categoría.</p>

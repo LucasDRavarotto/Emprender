@@ -27,6 +27,7 @@ class Post(models.Model):
     titulo = models.CharField(max_length=200)
     descripcion = models.TextField()
     imagen_seccion = models.ImageField(null=True, blank=True, default="default_image.png")
+    imagen_detalle = models.ImageField(upload_to='static/images/detalle_pics', null=True, blank=True,)
     categoria = models.ForeignKey(Category, on_delete=models.CASCADE, default=None)  # Cambia esto temporalmente
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
     horario_atencion = models.CharField(max_length=100, blank=True)  # Horario de atención
