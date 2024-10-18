@@ -1,7 +1,9 @@
-{% extends 'main.html' %}
+
 {% load static %}
 
-<title>{% block title %} Registro de usuario {% endblock title %}</title>
+{% block title %}
+<title> Registro de usuario </title>
+{% endblock title %}
 
 {% block contenido %}
 <center>
@@ -19,7 +21,7 @@
     <div class="container">
         <table>{{ form }}</table>
     <br> 
-    <a style="color: black;" href="{% url 'apps.usuario:reginstrar' %}" Todavia no esta registrado? Registrate </a>
+    <a style="color: black;" href="{% url 'apps.usuario:login' %}" Todavia no esta registrado? Registrate </a>
     <br><br>
     <button type="submit" class="btn btn-success btn-lg px-3">Iniciar sesion</button>
     </div>

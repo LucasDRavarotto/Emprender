@@ -1,0 +1,51 @@
+/* Estilos para la sección de cada emprendimiento */
+.card {
+    border-radius: 15px;
+    background-color: #f8f9fa;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #333;
+}
+
+.card-text {
+    font-family: 'Open Sans', sans-serif;
+    color: #555;
+    line-height: 1.6;
+}
+
+.img-fluid {
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 15px 0 0 15px;
+}
+
+.text-muted {
+    font-family: 'Roboto', sans-serif;
+    color: #777;
+}
+
+.container {
+    max-width: 900px;
+}
+
+/* Botones personalizados */
+.btn-custom {
+    background-color: #6c757d;
+    color: white;
+    border-radius: 25px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: #343a40;
+}

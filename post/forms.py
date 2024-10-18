@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 from django import forms
-from .models import Post , Categoria
+from .models import Post , Category, Contacto
 
 class PostForm(ModelForm): 
     class Meta: 
@@ -10,5 +10,10 @@ class PostForm(ModelForm):
 
 class CategoryForm(forms.ModelForm):
     class Meta:
-        model = Categoria
+        model = Category
         fields = ['name']
+
+class ContactoForm(forms.ModelForm):
+    class Meta:
+        model = Contacto
+        fields = ["nombre_apellido", "email", "asunto", "mensaje"]
