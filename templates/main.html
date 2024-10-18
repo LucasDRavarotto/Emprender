@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/css/owl.theme.default.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/ollie.css' %}">
     
-    
 
 </head>
 
@@ -120,19 +119,21 @@
         <div class="container">
             <h3 class="section-title mb-4">Emprendimientos</h3>
     
-            <div class="row text-center">
+            <d<div class="row text-center">
                 {% for post in posts %}
                 <div class="col-lg-4 mb-4">
-                    <a href="{% url 'post_detail' post.id %}">Ver más</a>
-                        <img class="card-img-top img-fluid" src="{{ post.imagen_seccion.url }}" alt="{{ post.titulo }}">
-                        <span class="card-body">
-                            <h4 class="title mt-4">{{ post.titulo }}</h4>
-                            <p class="xs-font">{{ post.descripcion|truncatewords:20 }}</p>
-                        </span>
-                    </a>
+                    <div class="card" style="max-width: 300px; margin: 0 auto;">
+                        <img class="card-img-top img-fluid" src="{{ post.imagen_seccion.url }}" alt="{{ post.titulo }}" style="max-height: 200px; object-fit: cover; border-radius: 8px;">
+                        <div class="card-body" style="padding: 10px;">
+                            <h4 class="title mt-4" style="font-size: 1.2rem;">{{ post.titulo }}</h4>
+                            <p class="xs-font" style="font-size: 0.9rem;">{{ post.descripcion|truncatewords:20 }}</p>
+                            <a href="{% url 'post_detail' post.id %}" class="btn btn-primary mt-3" style="width: 100%; padding: 8px; font-size: 0.9rem;">Ver más</a>
+                        </div>
+                    </div>
                 </div>
                 {% endfor %}
             </div>
+                     
         </div>
     </section>
     

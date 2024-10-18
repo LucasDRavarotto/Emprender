@@ -15,11 +15,8 @@ def home(request):
         del request.session['success_message']  # Elimina el mensaje después de usarlo
     else:
         success_message = None
-
-    
-
-    posts = Post.objects.all() #Obtenemos todos los posts  
-    context = {'posts': posts, 'success_message': success_message}
+        posts = Post.objects.all() #Obtenemos todos los posts  
+        context = {'posts': posts, 'success_message': success_message}
     return render(request, 'main.html', context)   
 
 #Creamos la vista de Contacto
@@ -52,7 +49,7 @@ def formulario(request):
         form = PostForm(request.POST,request.FILES )
         if form.is_valid():
             form.save()
-            return redirect('home')
+        return redirect('home')
 
     context = { 'form': form}
     return render (request , 'post/form_post.html', context)
