@@ -33,6 +33,9 @@ class Post(models.Model):
     horario_atencion = models.CharField(max_length=100, blank=True)  # Horario de atención
     ubicacion = models.CharField(max_length=255, blank=True)  # Ubicación
     servicios = models.TextField(blank=True)  # Servicios ofrecidos (opcional)
+    # Campos de contacto
+    email_contacto = models.EmailField(blank=True)  # Email de contacto
+    telefono_contacto = models.CharField(max_length=20, blank=True)  # Teléfono de contacto
 
 
     def __str__(self):

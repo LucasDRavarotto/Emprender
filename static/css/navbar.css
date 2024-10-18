@@ -1,0 +1,36 @@
+.custom-navbar {
+    background-color: #f8f9fa; /* Color de fondo claro */
+    border-bottom: 2px solid #007bff; /* Línea en la parte inferior */
+  }
+  
+  .navbar-brand {
+    font-weight: bold; /* Texto en negrita */
+    font-size: 1.5rem; /* Tamaño de fuente más grande */
+    color: #007bff; /* Color del texto */
+    transition: color 0.3s; /* Transición suave para el hover */
+  }
+  
+  .navbar-toggler {
+    border-color: #007bff; /* Color del borde del botón */
+  }
+  
+  .navbar-toggler-icon {
+    background-color: #007bff; /* Color del icono */
+  }
+  
+  .nav-link {
+    color: #007bff; /* Color de los enlaces */
+    font-weight: 500; /* Texto en semi-negrita */
+    transition: color 0.3s; /* Transición suave para el hover */
+  }
+  
+  .nav-link:hover {
+    color: #0056b3; /* Color al pasar el mouse */
+  }
+  
+  .nav-item.active .nav-link {
+    font-weight: bold; /* Texto en negrita para el elemento activo */
+    color: #0056b3; /* Color para el enlace activo */
+    text-decoration: underline; /* Subrayado para el enlace activo */
+  }
+  

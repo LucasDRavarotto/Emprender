@@ -15,7 +15,7 @@
 
     <div class="post-detail">
         {% if post.imagen_seccion %}
-        <img src="{{ post.imagen_seccion.url }}" alt="Logo de {{ post.titulo }}" class="img-fluid logo-imagen" style="max-width: 150px; display: block; margin: 0 auto; border-radius: 50%;">
+            <img src="{{ post.imagen_seccion.url }}" alt="Logo de {{ post.titulo }}" class="img-fluid logo-imagen rounded-square" style="width: 100%; max-width: 150px; display: block; margin: 0 auto;">
         {% endif %}
     
         <h1 class="text-center mt-3">{{ post.titulo }}</h1>
@@ -28,10 +28,32 @@
             {% endif %}
         
         <!-- Otros detalles del post -->
-        <p><strong>Horario de atención:</strong> {{ post.horario_atencion }}</p>
-        <p><strong>Ubicación:</strong> {{ post.ubicacion }}</p>
-        <p><strong>Servicios:</strong> {{ post.servicios }}</p>
-    </div>
+        <div class="detalles-adicionales">
+            {% if post.horario_atencion %}
+            <p><strong>Horario de atención:</strong> {{ post.horario_atencion }}</p>
+            {% endif %}
+            
+            {% if post.ubicacion %}
+            <p><strong>Ubicación:</strong> {{ post.ubicacion }}</p>
+            {% endif %}
+            
+            {% if post.servicios %}
+            <p><strong>Servicios:</strong> {{ post.servicios }}</p>
+            {% endif %}
+        </div>
+        <!-- Sección de Contactos -->
+        <div class="contact-section" style="margin-top: 30px; text-align: center;">
+            <h3>Contacto</h3>
+            <p>Para más información, contáctanos a través de:</p>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="mailto:info@ejemplo.com">Email: info@ejemplo.com</a></li>
+                <li><a href="tel:+1234567890">Teléfono: +1 234 567 890</a></li>
+                <li><a href="https://www.facebook.com/ejemplo" target="_blank">Facebook</a></li>
+                <li><a href="https://www.twitter.com/ejemplo" target="_blank">Twitter</a></li>
+                <li><a href="https://www.instagram.com/ejemplo" target="_blank">Instagram</a></li>
+            </ul>
+        </div>
+    </div>  
     
 
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
