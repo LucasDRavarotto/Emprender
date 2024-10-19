@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="description" content="Página de emprendimientos.">
     <meta name="author" content="Tu Nombre">
-    <title>Página de Emprendimientos</title>
+    <title>EmprenderChaco</title>
 
     <!-- CSS de assets -->
     <link rel="stylesheet" href="{% static 'assets/vendors/themify-icons/css/themify-icons.css' %}">
@@ -53,7 +53,7 @@
     </nav>
     
 
-    <header id="home" class="header">
+    <header id="home" class="header" style="background-image: url('/static/assets/imgs/resistencia.jpg')">
         <div class="overlay"></div>
 
         <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">  
@@ -248,4 +248,16 @@
     <script src="{% static 'assets/vendors/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'assets/vendors/owl-carousel/js/owl.carousel.min.js' %}"></script>
     <script src="{% static 'assets/js/main.js' %}"></script>
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('home');
+            const scrollPosition = window.scrollY;
+            
+            // Cambia la posición de la imagen de fondo
+            header.style.backgroundPosition = `center ${scrollPosition * 0.5}px`;
+        });
+    </script>
+    
+    
+</body>
 </html>
