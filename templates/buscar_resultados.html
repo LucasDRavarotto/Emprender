@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> <!-- Cambia la ruta según tu estructura -->
+    <title>Resultados de Búsqueda</title>
+</head>
+<body>
+    <h1>Resultados de búsqueda</h1>
+
+    {% if categories %}
+        <ul>
+            {% for category in categories %}
+                <li>
+                    <a href="{% url 'post_list' category.name %}">{{ category.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron categorías.</p>
+    {% endif %}
+</body>
+</html>

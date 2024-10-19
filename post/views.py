@@ -3,6 +3,7 @@ from django.contrib.auth import login, authenticate, logout
 from .models import Post, Category
 from .forms import CategoryForm, ContactoForm, RegisterForm, LoginForm
 from django.contrib import messages
+from django.views.generic import TemplateView
 
 from .forms import PostForm 
 
@@ -40,20 +41,17 @@ def contacto_view(request):
 
 
 def filtrar_categorias(request):
-    query = request.GET.get('q')
-    if query:
-        categories = Category.objects.filter(name__icontains=query).order_by('name')
-    else:
-        categories = Category.objects.none()
-
+    query = request.GET.get('q', '')  # Asegúrate de tener un valor por defecto
+    categories = Category.objects.filter(name__icontains=query).order_by('name')
     return render(request, 'buscar_resultados.html', {'categories': categories, 'query': query})
 
 
-def post_list(request, categoria_id):
-    categoria = get_object_or_404(Category, id=categoria_id)
+
+def post_list(request, nombre_categoria):
+    categoria = get_object_or_404(Category, name=nombre_categoria)  # Cambiar id a name
     posts = Post.objects.filter(categoria=categoria)
-    context={'posts': posts, 'categoria': categoria}
-    return render(request, 'post/post.html',context)
+    context = {'posts': posts, 'categoria': categoria}
+    return render(request, 'post/post.html', context)
 
 
 def formulario(request):
@@ -132,7 +130,9 @@ def user_login(request):
 
 def user_logout(request):
     logout(request)
-    return redirect('home')  # Redirige a la vista principal o a la página de login
+    return redirect('home')  # Redirige a la página de confirmación de logout
+
+
 
 
 

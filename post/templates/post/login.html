@@ -1,17 +1,22 @@
+{%load static %}
+
 <!-- post/templates/post/login.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> 
 </head>
 <body>
-    <h2>Iniciar sesión</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Iniciar sesión</button>
-    </form>
-    <p>¿No tienes una cuenta? <a href="{% url 'register' %}">Registrarse</a></p>
+    <div class="form-container">
+        <h2>Iniciar sesión</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Iniciar sesión</button>
+        </form>
+        <p>¿No tienes una cuenta? <a href="{% url 'register' %}">Registrarse</a></p>
+    </div>
 </body>
 </html>
