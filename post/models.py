@@ -36,6 +36,11 @@ class Post(models.Model):
     # Campos de contacto
     email_contacto = models.EmailField(blank=True)  # Email de contacto
     telefono_contacto = models.CharField(max_length=20, blank=True)  # Teléfono de contacto
+     # Nuevos campos para enlaces
+    link1 = models.URLField(blank=True, null=True)
+    link1_title = models.CharField(max_length=255, blank=True, null=True)  # Título para link1
+    link2 = models.URLField(blank=True, null=True)
+    link2_title = models.CharField(max_length=255, blank=True, null=True)  # Título para link2
 
 
     def __str__(self):

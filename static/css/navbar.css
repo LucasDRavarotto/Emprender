@@ -1,36 +1,64 @@
 .custom-navbar {
-    background-color: #f8f9fa; /* Color de fondo claro */
-    border-bottom: 2px solid #007bff; /* Línea en la parte inferior */
-  }
-  
-  .navbar-brand {
-    font-weight: bold; /* Texto en negrita */
-    font-size: 1.5rem; /* Tamaño de fuente más grande */
-    color: #007bff; /* Color del texto */
-    transition: color 0.3s; /* Transición suave para el hover */
-  }
-  
-  .navbar-toggler {
-    border-color: #007bff; /* Color del borde del botón */
-  }
-  
-  .navbar-toggler-icon {
-    background-color: #007bff; /* Color del icono */
-  }
-  
-  .nav-link {
-    color: #007bff; /* Color de los enlaces */
-    font-weight: 500; /* Texto en semi-negrita */
-    transition: color 0.3s; /* Transición suave para el hover */
-  }
-  
-  .nav-link:hover {
-    color: #0056b3; /* Color al pasar el mouse */
-  }
-  
-  .nav-item.active .nav-link {
-    font-weight: bold; /* Texto en negrita para el elemento activo */
-    color: #0056b3; /* Color para el enlace activo */
-    text-decoration: underline; /* Subrayado para el enlace activo */
-  }
-  
+  font-family: 'Poppins', sans-serif; /* Aplicar la fuente Poppins a la navbar */
+}
+
+.custom-navbar {
+  background: linear-gradient(to bottom, #f0f0f0, #ffffff); /* Degradado gris claro hacia blanco */
+  padding: 15px;
+  border-radius: 0 0 10px 10px; /* Bordes redondeados abajo */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  position: relative;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto; /* Centra la navbar */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Cuadro para el botón */
+.button-container {
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 5px; /* Espaciado interno */
+  background-color: #ffffff; /* Fondo blanco */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Estilo del botón */
+.navbar-toggler {
+  border: none; /* Sin borde */
+  background-color: transparent; /* Fondo transparente */
+  padding: 8px 12px;
+  transition: background-color 0.3s;
+}
+
+.navbar-toggler:hover {
+  background-color: #e0e0e0; /* Fondo gris al pasar el mouse */
+  color: #ffffff; /* Color del texto */
+}
+
+.navbar-brand {
+  color: #ffffff !important; /* Gris oscuro para buen contraste */
+  font-weight: bold;
+}
+
+.btn-volver {
+  display: inline-block; /* Permite establecer padding y margen */
+  padding: 10px 20px; /* Espaciado interno del botón */
+  background-color: #f06161c5; /* Color de fondo */
+  color: #ffffff; /* Color del texto */
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); /* Sombra del texto */
+  text-decoration: none; /* Quitar subrayado */
+  border-radius: 20px; /* Bordes redondeados */
+  transition: background-color 0.3s, color 0.3s; /* Transición suave para el hover */
+  border: 2px solid transparent; /* Bordes transparentes por defecto */
+}
+
+.btn-volver:hover {
+  background-color: #e05a5a; /* Color de fondo más oscuro al pasar el mouse */
+  color: #ffffff; /* Mantener el texto blanco al pasar el mouse */
+  border-color: #ffffffbd; /* Añadir borde de color al pasar el mouse */
+}

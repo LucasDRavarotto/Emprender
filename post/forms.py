@@ -12,8 +12,8 @@ class ContactoForm(forms.ModelForm):
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['titulo', 'descripcion', 'imagen_seccion', 'imagen_detalle', 'horario_atencion', 'ubicacion', 'servicios', 'email_contacto', 'telefono_contacto']
-        
+        fields = ['titulo', 'descripcion', 'imagen_seccion', 'imagen_detalle', 'horario_atencion', 'ubicacion', 'servicios', 'email_contacto', 'telefono_contacto', 'link1', 'link2']
+                
 class CategoryForm(forms.ModelForm):
     class Meta:
         model = Category

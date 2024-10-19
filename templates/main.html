@@ -23,15 +23,17 @@
     
     <nav id="scrollspy" class="navbar navbar-light bg-light navbar-expand-lg fixed-top" data-spy="affix" data-offset-top="20">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="assets/imgs/brand.svg" alt="" class="brand-img"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
+                
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">
+                    <img src="{% static 'images/logo-bg.png' %}" alt="Logo de mi sitio" width="70px" height="70px" class="d-inline-block align-top">
+                </a>
+            </div>
+    
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item mx-1">
-                        <a class="nav-link" href="#home">Inicio</a>
+                        <a class="nav-link btn btn-primary" href="#home">Inicio</a>
                     </li>
                     <li class="nav-item mx-1">
                         <a class="nav-link" style="width: 135px;" href="#about">Sobre Nosotros</a>
@@ -53,12 +55,15 @@
                     </li>
                     <li class="nav-item mx-2">
                         <a class="nav-link" href="{% url 'register' %}">Registrarme</a>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="#contacto">Contacto</a> <!-- Aquí se agrega el enlace a la sección de contacto -->
                     </li>
                 </ul>
             </div>
             
         </div>
     </nav>
+    
     
 
     <header id="home" class="header">
@@ -70,7 +75,6 @@
                     <div class="carousel-item active">
                         <div class="carousel-caption d-none d-md-block">
                             <h1 class="carousel-title">Emprendimientos <br>de Chaco</h1>
-                            <button class="btn btn-primary btn-rounded">Saber Más</button>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -111,10 +115,7 @@
                         <div class="social-links">
                             <a href="javascript:void(0)" class="link pr-1"><i class="ti-facebook"></i></a>
                             <a href="javascript:void(0)" class="link pr-1"><i class="ti-twitter-alt"></i></a>
-                            <a href="javascript:void(0)" class="link pr-1"><i class="ti-google"></i></a>
-                            <a href="javascript:void(0)" class="link pr-1"><i class="ti-pinterest-alt"></i></a>
                             <a href="javascript:void(0)" class="link pr-1"><i class="ti-instagram"></i></a>
-                            <a href="javascript:void(0)" class="link pr-1"><i class="ti-rss"></i></a>
                         </div>
                     </div>
                 </div>
@@ -146,14 +147,13 @@
     </section>
     
 
-    <section class="section" id="about">
+    <section class="section" id="about" style="padding-top: 200px;">
         <div class="container">
             <div class="row align-items-center mr-auto">
                 <div class="col-md-4">
                     <h5 class="xs-font mb-0">#Grupo 4</h5>
                     <h3 class="section-title">Sobre Nosotros</h3>
                     <p>Somos el Grupo 4 - Comision 2 del Informatorio y este es nuestro Proyecto de Emprendimientos de Chaco!</p>
-                    <a href="javascript:void(0)">Leer más...</a>
                 </div>
                 <div class="col-sm-6 col-md-4 ml-auto">
                     <div class="usuario1 d-flex align-items-center">
@@ -193,13 +193,13 @@
                             <h4 class="text-primary">Franco Godoy</h4>
                             <p>Programador Back-End y Front-End</p>
                         </div>
-                    </div>
+                    </div>               
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="section pb-0">
+    <section id="contacto" class="section pb-0">
         <div class="container">
             <h6 class="xs-font mb-0">Contactá con nuestro equipo</h6>
             <h3 class="section-title mb-5">Completá acá</h3>
@@ -227,11 +227,11 @@
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary btn-block" value="Enviar Mensaje">
                             <!-- Sección para mostrar mensajes -->
-                            {% if success_message %}
-                            <div class="alert alert-success">
-                                {{ success_message }}
-                            </div>
-                        {% endif %}
+                                                        {% if success_message %}
+                                                        <div class="alert alert-success">
+                                                            {{ success_message }}
+                                                        </div>
+                                                    {% endif %}
                         
                         </div>
                     </form>
@@ -244,6 +244,7 @@
     
     
     
+    
 
 
     <footer class="footer text-center">
@@ -251,11 +252,7 @@
             <p>&copy; Copyright © 2024 EmprenderChaco. Todos los derechos reservados.</p>
             <div class="social-links">
                 <a href="javascript:void(0)" class="link pr-1"><i class="ti-facebook"></i></a>
-                <a href="javascript:void(0)" class="link pr-1"><i class="ti-twitter-alt"></i></a>
-                <a href="javascript:void(0)" class="link pr-1"><i class="ti-google"></i></a>
-                <a href="javascript:void(0)" class="link pr-1"><i class="ti-pinterest-alt"></i></a>
                 <a href="javascript:void(0)" class="link pr-1"><i class="ti-instagram"></i></a>
-                <a href="javascript:void(0)" class="link pr-1"><i class="ti-rss"></i></a>
             </div>
         </div>
     </footer>
