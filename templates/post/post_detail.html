@@ -8,6 +8,9 @@
     <title>{{ post.titulo }}</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'css/post_detail.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
    
 </head>
 <body>
@@ -21,10 +24,10 @@
         <h1 class="text-center mt-3">{{ post.titulo }}</h1>
         
         <div class="post-content">
-            <p class="descripcion">{{ post.descripcion }}</p>
+            <p class="descripcion">{{ post.descripcion|urlize|linebreaks }}</p>
             
             {% if post.imagen_detalle %}
-            <img src="{{ post.imagen_detalle.url }}" alt="Imagen detallada de {{ post.titulo }}" class="img-fluid detalle-imagen">
+            <img src="{{ post.imagen_detalle.url }}" alt="Imagen detallada de {{ post.titulo }}" class="img-fluid detalle-imagen" style="max-width: 300px; height: auto;">
             {% endif %}
         
         <!-- Otros detalles del post -->
@@ -41,21 +44,35 @@
             <p><strong>Servicios:</strong> {{ post.servicios }}</p>
             {% endif %}
         </div>
+
         <!-- Sección de Contactos -->
         <div class="contact-section" style="margin-top: 30px; text-align: center;">
             <h3>Contacto</h3>
-            <p>Para más información, contáctanos a través de:</p>
-            <ul style="list-style: none; padding: 0;">
-                <li><a href="mailto:info@ejemplo.com">Email: info@ejemplo.com</a></li>
-                <li><a href="tel:+1234567890">Teléfono: +1 234 567 890</a></li>
-                <li><a href="https://www.facebook.com/ejemplo" target="_blank">Facebook</a></li>
-                <li><a href="https://www.twitter.com/ejemplo" target="_blank">Twitter</a></li>
-                <li><a href="https://www.instagram.com/ejemplo" target="_blank">Instagram</a></li>
-            </ul>
+            {% if post.email_contacto %}
+                <p>E-mail: <a href="mailto:{{ post.email_contacto }}">{{ post.email_contacto }}</a></p>
+            {% endif %}
+            {% if post.telefono_contacto %}
+                <p>Teléfono / Whatsapp: <a href="tel:{{ post.telefono_contacto }}">{{ post.telefono_contacto }}</a></p>
+            {% endif %}
         </div>
+
+        <!-- Sección de enlaces -->
+        <div class="link-section" style="margin-top: 30px;">
+            {% if post.link1 %}
+                <h4>{{ post.link1_title }}</h4> <!-- Título personalizado para el primer enlace -->
+                <p><a href="{{ post.link1 }}" target="_blank" rel="noopener noreferrer">{{ post.link1 }}</a></p>
+            {% endif %}
+            {% if post.link2 %}
+                <h4>{{ post.link2_title }}</h4> <!-- Título personalizado para el segundo enlace -->
+                <p><a href="{{ post.link2 }}" target="_blank" rel="noopener noreferrer">{{ post.link2 }}</a></p>
+            {% endif %}
+        </div>
+
+
+
+
     </div>  
     
-
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </body>
 </html>

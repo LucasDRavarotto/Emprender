@@ -70,6 +70,17 @@ def post_detail(request, post_id):
     # Renderizamos la plantilla con el post y el formulario
     return render(request, 'post/post_detail.html', {'post': post})
 
+def edit_post(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES, instance=post)
+        if form.is_valid():
+            form.save()
+            return redirect('post_detail', post_id=post.id)
+    else:
+        form = PostForm(instance=post)
+    return render(request, 'edit_post.html', {'form': form, 'post': post})
+
 
 def buscar_posts(request):
     query = request.GET.get('q')
