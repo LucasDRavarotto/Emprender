@@ -1,0 +1,60 @@
+/* Estilo general del cuerpo */
+body {
+    font-family: Arial, sans-serif; /* Tipografía */
+    background-color: #f4f4f4; /* Color de fondo */
+    color: #333; /* Color del texto */
+    margin: 0; /* Margen 0 */
+    padding: 20px; /* Espaciado interno */
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 800px; /* Ancho máximo */
+    margin: 0 auto; /* Centrando */
+    padding: 20px; /* Espaciado interno */
+    background: white; /* Fondo blanco */
+    border-radius: 8px; /* Esquinas redondeadas */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Título principal */
+.title {
+    text-align: center; /* Centrar texto */
+    color: #4a4a4a; /* Color más neutro para el título */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+/* Lista de categorías */
+.category-list {
+    list-style-type: none; /* Quitar viñetas */
+    padding: 0; /* Quitar espaciado */
+}
+
+/* Elemento de categoría */
+.category-item {
+    margin-bottom: 15px; /* Espaciado inferior entre elementos */
+}
+
+/* Enlace de categoría */
+.category-link {
+    text-decoration: none; /* Sin subrayado */
+    color: #333; /* Color del texto */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 5px; /* Esquinas redondeadas */
+    display: block; /* Hacer que el enlace ocupe todo el ancho */
+    background-color: #e0e0e0; /* Fondo gris claro */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave */
+}
+
+/* Efecto hover en el enlace de categoría */
+.category-link:hover {
+    background-color: #ccc; /* Color de fondo al pasar el ratón */
+    color: #000; /* Cambiar color del texto al pasar el ratón */
+}
+
+/* Mensaje de no resultados */
+.no-results {
+    text-align: center; /* Centrar texto */
+    font-size: 1.2rem; /* Tamaño de fuente */
+    color: #888; /* Color gris */
+}

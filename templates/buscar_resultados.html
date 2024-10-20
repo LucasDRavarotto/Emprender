@@ -1,26 +1,28 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> <!-- Cambia la ruta según tu estructura -->
+    <link rel="stylesheet" href="{% static 'css/buscar.css' %}"> <!-- Cambia la ruta según tu estructura -->
     <title>Resultados de Búsqueda</title>
 </head>
 <body>
-    <h1>Resultados de búsqueda</h1>
+    <div class="container">
+        <h1 class="title">Resultados de Búsqueda</h1>
 
-    {% if categories %}
-        <ul>
-            {% for category in categories %}
-                <li>
-                    <a href="{% url 'post_list' category.name %}">{{ category.name }}</a>
-                </li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>No se encontraron categorías.</p>
-    {% endif %}
+        {% if categories %}
+            <ul class="category-list">
+                {% for category in categories %}
+                    <li class="category-item">
+                        <a href="{% url 'post_list' category.name %}" class="category-link">{{ category.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="no-results">No se encontraron categorías.</p>
+        {% endif %}
+    </div>
 </body>
 </html>

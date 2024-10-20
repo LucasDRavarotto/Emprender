@@ -94,12 +94,11 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra del formulario */
 }
 
-.form-control {
-    border-radius: 5px; /* Bordes redondeados para los campos de entrada */
-}
-
 .btn {
-    border-radius: 5px; /* Bordes redondeados para el botón */
+    border: none; /* Sin borde */
+    border-radius: 25px; /* Esquinas redondeadas */
+    padding: 10px 20px; /* Espaciado interior uniforme */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
 }
 
 .alert {
@@ -120,4 +119,103 @@
 
 #contacto {
     padding-top:120px; /* Asegúrate de que este valor se ajuste a la altura de tu navbar */
+}
+
+/* Estilo general de la navbar */
+#scrollspy {
+    background: linear-gradient(to bottom, #f8c7c1, white);
+    padding: 10px 20px;
+}
+
+/* Estilo de los enlaces */
+.nav-link {
+    color: #333; /* Color del texto */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    overflow: hidden; /* Oculta cualquier desbordamiento */
+    text-overflow: ellipsis; /* Muestra '...' si el texto es demasiado largo */
+    white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
+}
+
+.nav-link:hover {
+    color: #f48c8c; /* Color al pasar el ratón */
+    transform: scale(1.05); /* Aumentar ligeramente el tamaño */
+}
+
+/* Espaciado entre los elementos de la navbar */
+.nav-item {
+    margin-right: 15px; /* Margen a la derecha para todos los elementos */
+}
+
+/* Estilo del botón de búsqueda */
+.form-control {
+    background-color: #f8f8f8; /* Color de fondo claro */
+    padding: 10px 15px; /* Relleno interior */
+    border: 1px solid #d67a7a; /* Borde ligero */
+    border-radius: 25px; /* Esquinas redondeadas */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+    margin-right: 5px; /* Margen a la derecha */
+}
+
+.form-control:focus {
+    border-color: #d67a7a; /* Color del borde al enfocar */
+    box-shadow: 0 0 5px rgba(214, 122, 122, 0.5); /* Sombra al enfocar */
+}
+
+.btn-outline-success {
+    background-color: #d67a7a; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    padding: 10px 15px; /* Relleno interior */
+    border-radius: 25px; /* Esquinas redondeadas */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+}
+
+.btn-outline-success:hover {
+    background-color: #c56d6d; /* Color de fondo al pasar el ratón */
+    transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+}
+
+.btn-outline-success:active {
+    transform: scale(0.95); /* Efecto de pulsación al hacer clic */
+}
+
+.btn-outline-primary {
+    background-color: #d67a7a; /* Color de fondo */
+    color: #ffffff; /* Color del texto */
+}
+
+/* Ajustes para el logo */
+.navbar-brand img {
+    border-radius: 50%; /* Redondear el logo */
+    transition: transform 0.3s ease; /* Transición suave */
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el ratón */
+}
+
+/* Alinear los elementos en el navbar */
+.navbar-nav {
+    display: flex; /* Asegúrate de que la barra de navegación use Flexbox */
+    align-items: center; /* Alineación vertical de los elementos */
+}
+
+/* Estilo para el contenedor de la navbar */
+.navbar {
+    opacity: 0; /* Inicialmente invisible */
+    transform: translateY(-20px); /* Mover hacia arriba */
+    animation: slideDown 0.5s forwards; /* Animación de deslizamiento */
+    transition: background-color 0.3s ease; /* Transición suave al cambiar el fondo */
+}
+
+/* Definición de la animación de deslizamiento */
+@keyframes slideDown {
+    to {
+        opacity: 1; /* Hacer visible */
+        transform: translateY(0); /* Regresar a la posición original */
+    }
+}
+
+.nav-item .nav-link {
+    white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
 }

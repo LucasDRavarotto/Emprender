@@ -2851,7 +2851,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-success:focus, .btn-success.focus {
-  box-shadow: 0 0 0 0.2rem rgba(5, 211, 172, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
 }
 
 .btn-success.disabled, .btn-success:disabled {
