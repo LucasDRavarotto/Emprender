@@ -27,7 +27,7 @@
             <p class="descripcion">{{ post.descripcion|urlize|linebreaks }}</p>
             
             {% if post.imagen_detalle %}
-            <img src="{{ post.imagen_detalle.url }}" alt="Imagen detallada de {{ post.titulo }}" class="img-fluid detalle-imagen" style="max-width: 300px; height: auto;">
+                <img src="{{ post.imagen_detalle.url }}" alt="Imagen detallada de {{ post.titulo }}" class="img-fluid detalle-imagen" style="max-width: 300px; height: auto;">
             {% endif %}
         
         <!-- Otros detalles del post -->

@@ -14,7 +14,5 @@ urlpatterns = [
     path('login/', user_login, name='login'),
     path('logout/', user_logout, name='logout'),
     path('buscar-categorias/', views.filtrar_categorias, name='filtrar_categorias'),
-    
-
-    
+     
 ]
