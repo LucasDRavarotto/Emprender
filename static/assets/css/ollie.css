@@ -11551,31 +11551,21 @@ pre .code {
 }
 
 .header {
-  position: relative;
-  height: 100vh;
-  min-height: 600px;
-  background-image: url(../imgs/header.jpg);
-  background-size: cover;
-  background-position: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  background-size: cover; /* La imagen cubre todo el contenedor */
+  background-position: center top; /* Centra la imagen en la parte superior */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 100vh; /* Altura de la sección */
+  position: relative; /* Para la superposición */
 }
 
 .header .overlay {
-  position: absolute;
+  position: absolute; /* Posiciona la superposición */
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: #2C3E50;
-  opacity: .9;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Color de superposición */
+  z-index: 1; /* Asegura que esté por encima de la imagen de fondo */
 }
 
 .header .carousel {
