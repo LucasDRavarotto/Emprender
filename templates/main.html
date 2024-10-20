@@ -15,56 +15,58 @@
     <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/css/owl.carousel.css' %}">
     <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/css/owl.theme.default.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/ollie.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/ollie2.css' %}">
     
 
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
     
-    <nav id="scrollspy" class="navbar navbar-light bg-light navbar-expand-lg fixed-top" data-spy="affix" data-offset-top="20">
+    <nav id="scrollspy" class="navbar navbar-light navbar-expand-lg fixed-top" style="background: linear-gradient(to bottom, #f8c7c1, white); padding: 10px 20px;">
         <div class="container">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">
-                    <img src="{% static 'images/logo-bg.png' %}" alt="Logo de mi sitio" width="70px" height="70px" class="d-inline-block align-top">
-                </a>
-            </div>
-    
+            <a class="navbar-brand" href="/">
+                <img src="{% static 'images/logo-bg.png' %}" alt="Logo de mi sitio" width="60" height="60" class="d-inline-block align-top">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item mx-1">
-                        <a class="nav-link btn btn-primary" href="#home">Inicio</a>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link btn btn-outline-primary rounded-pill" href="#home">Inicio</a>
                     </li>
-                    <li class="nav-item mx-1">
-                        <a class="nav-link" style="width: 135px;" href="#about">Sobre Nosotros</a>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="#about">Sobre Nosotros</a>
                     </li>
                     <li class="nav-item mx-2">
                         <a class="nav-link" href="#expertises">Emprendimientos</a>
                     </li>
-                    
-                    <!-- Buscador de Categorías -->
                     <li class="nav-item mx-2">
-                        <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'filtrar_categorias' %}">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Buscar Categoría" name="q" value="{{ query|default_if_none:'' }}">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                        <form class="form-inline" method="GET" action="{% url 'filtrar_categorias' %}">
+                            <input class="form-control mr-2 rounded-pill" type="search" placeholder="Buscar Categoría" name="q" value="{{ query|default_if_none:'' }}" style="border: 1px solid #ccc;">
+                            <button class="btn btn-outline-success rounded-pill" type="submit">Buscar</button>
                         </form>
                     </li>
                     
-                     <!-- Verificar si el usuario está autenticado -->
-                {% if user.is_authenticated %}
-                <li class="nav-item mx-2">
-                    <span class="nav-link">Hola, {{ user.username }}!</span>
-                </li>
-                <li class="nav-item mx-2">
-                    <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesión</a>
-                </li>
-            {% else %}
-                <li class="nav-item mx-2">
-                    <a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a>
-                </li>
-                <li class="nav-item mx-2">
-                    <a class="nav-link" href="{% url 'register' %}">Registrarme</a>
-                </li>
-            {% endif %}
+                    {% if user.is_authenticated %}
+                    <li class="nav-item mx-2">
+                        <span class="nav-link">Hola, {{ user.username }}!</span>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link btn btn-outline-danger rounded-pill" href="{% url 'logout' %}">Cerrar Sesión</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item mx-2">
+                        <a class="nav-link btn btn-outline-primary rounded-pill" href="{% url 'login' %}">Iniciar Sesión</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link btn btn-outline-secondary rounded-pill" href="{% url 'register' %}">Registrarme</a>
+                    </li>
+                    {% endif %}
+                    
+                    <li class="nav-item mx-2">
                         <a class="nav-link" href="#contacto">Contacto</a>
                     </li>
                 </ul>
@@ -73,8 +75,11 @@
     </nav>
     
     
+    
+    
+    
 
-    <header id="home" class="header">
+    <header id="home" class="header" style="background-image: url('/static/assets/imgs/resistencia.jpg')">
         <div class="overlay"></div>
 
         <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">  
@@ -82,7 +87,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="carousel-caption d-none d-md-block">
-                            <h1 class="carousel-title">Emprendimientos <br>de Chaco</h1>
+                            <h1 class="carousel-title">#EmprenderChaco</h1>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -101,34 +106,22 @@
             </div>        
         </div>
 
-        <div class="infos container mb-4 mb-md-2">
-            <div class="title">
-                <h6 class="subtitle font-weight-normal">¡Bienvenido a la Página Web de Emprendimientos Chaco!</h6>
-                <h5>Aquí debajo te dejamos disponibles los emprendimientos &#x1F447; </h5>
-                
+        <section class="welcome-section">
+            <div class="container">
+              <div class="welcome-box">
+                <h2 class="section-title">¡Bienvenido a Emprendimientos Chaco!</h2>
+                <p class="section-description">
+                  Descubre la creatividad y el talento de los emprendedores del Chaco. ¡Explora nuestros productos y servicios!
+                </p>
+                <p class="welcome-text" style="font-size: 1.3rem;">
+                  ¡Explora nuestro blog y encuentra todo lo que necesitas! #EmprendedoresDelChaco
+                </p>
+              </div>
             </div>
-            <div class="socials text-right">
-                <div class="row justify-content-between">
-                    <div class="col">
-                        <a class="d-block subtitle"><i class="ti-microphone pr-2"></i>(+54) 362-4123456</a>
-                        <a class="d-block subtitle">
-                            <span class="d-flex align-items-center">
-                              <i class="ti-email mx-2"></i>
-                              <span>emprendimientochaco@gmail.com</span>
-                            </span>
-                          </a>
-                    </div>
-                    <div class="col">
-                        <h6 class="subtitle font-weight-normal mb-2">Redes Sociales</h6>
-                        <div class="social-links">
-                            <a href="javascript:void(0)" class="link pr-1"><i class="ti-facebook"></i></a>
-                            <a href="javascript:void(0)" class="link pr-1"><i class="ti-twitter-alt"></i></a>
-                            <a href="javascript:void(0)" class="link pr-1"><i class="ti-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </section>
+        
+        
+        
     </header>
 
 
@@ -155,7 +148,7 @@
     </section>
     
 
-    <section class="section" id="about" style="padding-top: 200px;">
+    <section class="section" id="about">
         <div class="container">
             <div class="row align-items-center mr-auto">
                 <div class="col-md-4">
@@ -208,11 +201,11 @@
     </section>
 
     <section id="contacto" class="section pb-0">
-        <div class="container">
+        <div class="container text-center"> <!-- Añadido text-center para centrar texto -->
             <h6 class="xs-font mb-0">Contactá con nuestro equipo</h6>
             <h3 class="section-title mb-5">Completá acá</h3>
     
-            <div class="row align-items-center justify-content-between">
+            <div class="row align-items-center justify-content-center"> <!-- Cambiar justify-content-between a justify-content-center -->
                 <div class="col-md-8 col-lg-7">
                     <form class="contact-form" method="post" action="{% url 'contacto' %}">
                         {% csrf_token %}
@@ -235,12 +228,11 @@
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary btn-block" value="Enviar Mensaje">
                             <!-- Sección para mostrar mensajes -->
-                                                        {% if success_message %}
-                                                        <div class="alert alert-success">
-                                                            {{ success_message }}
-                                                        </div>
-                                                    {% endif %}
-                        
+                            {% if success_message %}
+                                <div class="alert alert-success">
+                                    {{ success_message }}
+                                </div>
+                            {% endif %}
                         </div>
                     </form>
                 </div>
@@ -249,25 +241,35 @@
     </section>
     
     
-    
-    
-    
-    
-
-
-    <footer class="footer text-center">
+    <footer class="footer">
         <div class="container">
-            <p>&copy; Copyright © 2024 EmprenderChaco. Todos los derechos reservados.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="ti-microphone pr-2"></i>
+                    <strong>Teléfono:</strong>
+                    <span>(+54) 362-4123456</span>
+                </div>
+                <div class="contact-item">
+                    <i class="ti-email pr-2"></i>
+                    <strong>Email:</strong>
+                    <span>emprendimientochaco@gmail.com</span>
+                </div>
+            </div>
+            <p>&copy; 2024 EmprenderChaco. Todos los derechos reservados.</p>
             <div class="social-links">
                 <a href="javascript:void(0)" class="link pr-1"><i class="ti-facebook"></i></a>
                 <a href="javascript:void(0)" class="link pr-1"><i class="ti-instagram"></i></a>
             </div>
         </div>
     </footer>
-
+    
+    
+    
     <!-- JS de assets -->
     <script src="{% static 'assets/vendors/jquery/jquery.min.js' %}"></script>
     <script src="{% static 'assets/vendors/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'assets/vendors/owl-carousel/js/owl.carousel.min.js' %}"></script>
     <script src="{% static 'assets/js/main.js' %}"></script>
+
+    
 </html>

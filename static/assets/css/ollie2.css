@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+  .welcome-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px; /* Ajusta el radio para cambiar la redondez */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+  }
+  .section-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 3rem; /* Ajusta el tamaño según tus necesidades */
+    color: #000000;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.815);
+
+  }
+  
+  .section-description {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    color: #000000;
+    line-height: 1.5;
+    text-shadow: 2px 2px 4px rgb(240, 240, 240);
+
+  }
+  
+.footer {
+    background-color: #f0f0f0; /* Color de fondo del footer */
+    padding: 20px 0; /* Espaciado arriba y abajo */
+    text-align: center; /* Centra el texto */
+}
+
+.footer .container {
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor */
+}
+
+.footer .contact-info {
+    margin-bottom: 15px; /* Espaciado inferior */
+    display: flex; /* Usa flexbox para alinear los elementos */
+    justify-content: center; /* Centra horizontalmente */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten si hay poco espacio */
+}
+
+.footer .contact-item {
+    display: flex; /* Usa flexbox para alinear el título, el icono y el texto */
+    align-items: center; /* Centra verticalmente */
+    margin: 0 15px; /* Espaciado horizontal entre los elementos de contacto */
+    color: #555; /* Color del texto */
+}
+
+.footer .contact-item strong {
+    margin-right: 5px; /* Espacio entre el título y el icono */
+}
+
+.footer .contact-item i {
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+}
+
+.footer p {
+    margin: 10px 0; /* Espaciado para el texto de copyright */
+    color: #666; /* Color del texto de copyright */
+}
+
+.footer .social-links {
+    margin-top: 10px; /* Espaciado entre los enlaces sociales y el texto */
+}
+
+.footer .social-links .link {
+    font-size: 1.5em; /* Tamaño de iconos sociales */
+    color: #333; /* Color de los iconos */
+    transition: color 0.3s; /* Transición suave para el hover */
+    margin: 0 5px; /* Espaciado horizontal entre los enlaces */
+}
+
+.footer .social-links .link:hover {
+    color: coral; /* Color al pasar el mouse */
+}
+
+.section {
+    padding: 60px 0; /* Espaciado arriba y abajo de la sección */
+}
+
+.section-title {
+    font-size: 2rem; /* Tamaño del título de la sección */
+    margin-bottom: 30px; /* Espaciado inferior */
+}
+
+.contact-form {
+    background-color: #fff; /* Color de fondo del formulario */
+    padding: 30px; /* Espaciado interno del formulario */
+    border-radius: 8px; /* Bordes redondeados del formulario */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra del formulario */
+}
+
+.form-control {
+    border-radius: 5px; /* Bordes redondeados para los campos de entrada */
+}
+
+.btn {
+    border-radius: 5px; /* Bordes redondeados para el botón */
+}
+
+.alert {
+    margin-top: 15px; /* Espacio entre el botón y la alerta */
+}
+
+#expertises {
+    padding-top: 110px; /* Asegúrate de que este valor se ajuste a la altura de tu navbar */
+}
+
+#home {
+    padding-top: 25px; /* Asegúrate de que este valor se ajuste a la altura de tu navbar */
+}
+
+#about {
+    padding-top: 160px; /* Asegúrate de que este valor se ajuste a la altura de tu navbar */
+}
+
+#contacto {
+    padding-top:120px; /* Asegúrate de que este valor se ajuste a la altura de tu navbar */
+}
